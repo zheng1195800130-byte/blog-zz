@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="关于"
+	description="关于 zz 博客和 DowMore 项目"
+	pubDate={new Date('2026-07-10')}
+>
+	<h2>关于 zz</h2>
+
+	<p>
+		这里是 DowMore 项目的开发日志。每一篇文章都由 Claude 根据项目代码的提交记录自动生成，
+		记录从零到一构建微信小程序的全过程。
+	</p>
+
+	<h2>DowMore 是什么？</h2>
+
+	<p>
+		DowMore 是一个微信小程序，集成四大能力：
+	</p>
+
+	<ul>
+		<li><strong>视频保存</strong> — 支持 1800+ 网站，基于 yt-dlp</li>
+		<li><strong>音乐搜索</strong> — 聚合 7 大国内音乐平台，基于 Listen1</li>
+		<li><strong>图片批量</strong> — 支持 Pixiv / Instagram / Twitter 等，基于 gallery-dl</li>
+		<li><strong>去水印</strong> — AI 视频去水印 / 去字幕，基于 video-subtitle-remover</li>
+	</ul>
+
+	<p>
+		核心理念：零安装、云端处理、微信原生。用户在微信内粘贴链接即可使用，
+		所有繁重计算在云端完成，文件只做临时中转。
+	</p>
+
+	<h2>技术栈</h2>
+
+	<table>
+		<tr><td><strong>层</strong></td><td><strong>技术</strong></td><td><strong>说明</strong></td></tr>
+		<tr><td>小程序前端</td><td>uni-app (Vue 3 + Composition API) + Vite</td><td>一套代码编译到微信小程序</td></tr>
+		<tr><td>后端</td><td>FastAPI (Python 3.11+)</td><td>异步 Web 框架</td></tr>
+		<tr><td>异步任务</td><td>Celery + Redis</td><td>下载/转码/AI 处理</td></tr>
+		<tr><td>数据库</td><td>PostgreSQL 15</td><td>用户数据、任务记录</td></tr>
+		<tr><td>对象存储</td><td>腾讯云 COS</td><td>文件临时中转</td></tr>
+	</table>
+
+	<h2>链接</h2>
+
+	<ul>
+		<li><a href="https://gitee.com/zjper/dow-more">项目仓库 (Gitee)</a></li>
+	</ul>
+</Layout>

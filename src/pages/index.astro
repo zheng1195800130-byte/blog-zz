@@ -1,0 +1,30 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>👋 这里是 zz</h1>
+			<p>
+				记录 <a href="https://gitee.com/zjper/dow-more">DowMore</a> 的开发过程 —
+				一个集成视频下载、音乐搜索、图片批量保存、视频去水印的微信小程序。
+			</p>
+			<p>
+				技术栈：uni-app (Vue 3) + FastAPI + Celery + PostgreSQL + Redis
+			</p>
+			<p>
+				<a href="/blog">📝 查看所有文章 →</a>
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
