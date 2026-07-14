@@ -1,5 +1,4 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
@@ -10,22 +9,63 @@ const base = import.meta.env.BASE_URL;
 <!doctype html>
 <html lang="zh-CN">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content="Astro v7" />
+		<title>{SITE_TITLE}</title>
+		<meta name="description" content={SITE_DESCRIPTION} />
+		<style>
+			:root {
+				--accent: #2337ff; --accent-dark: #000d8a;
+				--black: 15, 18, 25; --gray: 96, 115, 159;
+				--gray-light: 229, 233, 240; --gray-dark: 34, 41, 57;
+			}
+			body { font-family: system-ui, sans-serif; margin: 0; padding: 0; color: rgb(var(--gray-dark)); background: #f8f9fb; }
+			main { max-width: 720px; margin: auto; padding: 3em 1em; }
+			.hero { text-align: center; padding: 3rem 0 2rem; }
+			.hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: rgb(var(--black)); }
+			.hero p { font-size: 1.1rem; color: rgb(var(--gray)); max-width: 480px; margin: 0 auto; }
+			.projects { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+			.project-card {
+				background: white; border-radius: 12px; padding: 2rem;
+				box-shadow: 0 2px 12px rgba(var(--black), 0.06);
+				text-decoration: none; transition: 0.2s; display: block;
+			}
+			.project-card:hover { box-shadow: 0 4px 20px rgba(var(--black), 0.12); transform: translateY(-2px); }
+			.project-card h2 { margin: 0 0 0.5rem; font-size: 1.5rem; color: rgb(var(--black)); }
+			.project-card .icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+			.project-card p { color: rgb(var(--gray)); margin: 0 0 0.5rem; font-size: 0.95rem; }
+			.project-card .link { color: var(--accent); font-weight: 600; }
+			@media (max-width: 600px) {
+				.projects { grid-template-columns: 1fr; }
+				.hero h1 { font-size: 1.8rem; }
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>👋 这里是 zz</h1>
-			<p>
-				记录 <a href="https://gitee.com/zjper/dow-more">DowMore</a> 的开发过程 —
-				一个集成视频下载、音乐搜索、图片批量保存、视频去水印的微信小程序。
-			</p>
-			<p>
-				技术栈：uni-app (Vue 3) + FastAPI + Celery + PostgreSQL + Redis
-			</p>
-			<p>
-				<a href={`${base}/blog/`}>📝 查看所有文章 →</a>
-			</p>
+			<div class="hero">
+				<h1>{SITE_TITLE}</h1>
+				<p>{SITE_DESCRIPTION}</p>
+			</div>
+			<div class="projects">
+				<a class="project-card" href={`${base}/dowmore/`}>
+					<div class="icon">📹</div>
+					<h2>DowMore</h2>
+					<p>微信小程序 — 视频下载、音乐搜索、图片批量、视频去水印</p>
+					<p>uni-app + FastAPI + Celery + PostgreSQL</p>
+					<span class="link">查看开发日志 →</span>
+				</a>
+				<a class="project-card" href={`${base}/stockexpert/`}>
+					<div class="icon">📈</div>
+					<h2>股票大师</h2>
+					<p>AI 金融助手 — 随身携带的专业股票分析师</p>
+					<p>Taro + NestJS + 豆包 AI + Supabase</p>
+					<span class="link">查看开发日志 →</span>
+				</a>
+			</div>
 		</main>
 		<Footer />
 	</body>

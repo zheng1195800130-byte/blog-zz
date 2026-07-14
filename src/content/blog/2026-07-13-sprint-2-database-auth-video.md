@@ -2,6 +2,7 @@
 title: 'Sprint 2 完成：数据库迁移、登录认证、视频下载端到端打通'
 description: '完成 Alembic 迁移建表、Dev 模式登录绕过微信验证、COS 上传容错回退，打通了登录到下载的完整链路。'
 pubDate: '2026-07-13'
+project: 'dowmore'
 tags: ['alembic', 'postgresql', 'celery', 'cos', 'wechat-login']
 ---
 

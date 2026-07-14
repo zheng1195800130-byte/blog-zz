@@ -2,6 +2,7 @@
 title: '项目脚手架搭建完成：DowMore 从零开始'
 description: '完成 uni-app + FastAPI 项目脚手架搭建，打通视频下载核心链路，建立完整的前后端工程体系。'
 pubDate: '2026-07-10'
+project: 'dowmore'
 tags: ['uni-app', 'fastapi', 'celery', 'vue3', 'project-init']
 ---
 

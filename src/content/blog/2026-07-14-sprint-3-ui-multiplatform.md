@@ -2,6 +2,7 @@
 title: 'Sprint 3：UI 大升级 + 全平台解析 + 抖音零 Cookie 方案'
 description: '33 个文件 3000 行变更：全局靛蓝主题、4 个平台专用解析引擎（抖音/快手/B站/微博）、任务管理中心、vConsole 调试面板。'
 pubDate: '2026-07-14'
+project: 'dowmore'
 tags: ['ui-design', 'douyin', 'reverse-engineering', 'wechat-miniapp', 'svg', 'vconsole']
 ---
 
